@@ -1,16 +1,27 @@
+// EXercise Function 
+
+// EX1 :
+// Declare Function
+
 function getDetails(zName, zAge, zCountry) {
-    function namePattern(zName) {
-      
-    }
-    function ageWithMessage(zAge) {
-       
-    }
-    function countryTwoLetters(zCountry) {
-       
-    }
-    function fullDetails() {
-      
-    }
-    return fullDetails();  
+  function namePattern(zName) {
+    let name = `${zName.split(" ")[0]+" "+zName.split(" ")[1][0].toUpperCase()+". ,"}`;
+    return name;
   }
-  
+
+  function ageWithMessage(zAge) {
+    let age = `Your Age Is ${zAge.split(" ")[0]},`;
+    return age;
+  }
+
+  function countryTwoLetters(zCountry) {
+    let country = `You Live In ${zCountry.slice(0,2).toUpperCase()}`
+    return country;
+  }
+
+  function fullDetails() {
+    return `Hello ${namePattern(zName)}${ageWithMessage(zAge)}${countryTwoLetters(zCountry)}`
+  }
+  return fullDetails();
+}
+console.log(getDetails("Osama Mohamed", "38 Is My Age", "Egypt"));
