@@ -37,3 +37,27 @@ const getDetails = (zName, zAge, zCountry) => {
   return fullDetails();
 }
 console.log(getDetails("Osama Mohamed", "38 Is My Age", "Egypt"));
+
+
+//EX 3
+// Normal Function
+
+// function checker(zName) {
+//   return function (status) {
+//     return function (salary) {
+//       return status === "Available" ? `${zName}, My Salary Is ${salary}` : `Iam Not Available`;
+//     };
+//   };
+// }
+
+// Arrow Function Syntax
+
+const checker = (zName) => (status) => (salary) => status === "Available" ? `${zName}, My Salary Is ${salary}` : `Iam Not Available`;
+
+
+
+
+
+
+console.log(checker("Osama")("Available")(4000));
+console.log(checker("Ahmed")("Not Available")());
