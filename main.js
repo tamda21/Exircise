@@ -38,7 +38,7 @@ const getDetails = (zName, zAge, zCountry) => {
 }
 console.log(getDetails("Osama Mohamed", "38 Is My Age", "Egypt"));
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //EX 3
 // Normal Function
 
@@ -53,11 +53,30 @@ console.log(getDetails("Osama Mohamed", "38 Is My Age", "Egypt"));
 // Arrow Function Syntax
 
 const checker = (zName) => (status) => (salary) => status === "Available" ? `${zName}, My Salary Is ${salary}` : `Iam Not Available`;
-
-
-
-
-
-
 console.log(checker("Osama")("Available")(4000));
 console.log(checker("Ahmed")("Not Available")());
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// EX 4 :
+
+function specialMix(...data) {
+  let rest = 0;
+  for (let i = 0; i < data.length; i++) {
+    if (typeof data[i] === "number") {
+      rest += data[i];
+    } else {
+      if (data[i].slice(0, 2) >= 0) {
+        rest += parseInt(data[i])
+      }
+    }
+  }
+  if (rest != 0) {
+    return rest
+  } else {
+    return `All Is String`
+  }
+}
+
+console.log(specialMix(10, 20, 30)); // 60
+console.log(specialMix("10Test", "Testing", "20Cool")); // 30
+console.log(specialMix("Testing", "10Testing", "40Cool")); // 50
+console.log(specialMix("Test", "Cool", "Test"));
