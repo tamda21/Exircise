@@ -80,3 +80,48 @@ console.log(specialMix(10, 20, 30)); // 60
 console.log(specialMix("10Test", "Testing", "20Cool")); // 30
 console.log(specialMix("Testing", "10Testing", "40Cool")); // 50
 console.log(specialMix("Test", "Cool", "Test"));
+
+
+////////////////////////////////////////////////////////////
+// Function Arrow Challenges
+
+// EX 1 :
+// Function 
+// let names = function(...param){
+//   return `String ${param}=>Done !`
+// }
+// console.log(names("Osama","Mohammed","Ali","Ibrahim"))
+// Arrow Function Syntax
+let names = (...param) => `String ${param}=>Done !`;
+
+console.log(names("Osama", "Mohammed", "Ali", "Ibrahim"));
+
+//EX 2 :
+let myNumbers = [20, 50, 10, 60];
+// Function 
+// function calc(one,two,...nums){
+//   let reset = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (80-(one+two)==nums[i]) {
+//       reset +=nums[i];
+//     }
+
+//   }
+//   return one+two+reset;
+// }
+
+// console.log(calc(10,20,50,80));//80
+
+// Arrow Function Syntax
+const calc = (one, two, ...nums) => {
+  let reset = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (80 - (one + two) == nums[i]) {
+      reset += nums[i];
+    }
+
+  }
+  return one + two + reset;
+}
+
+console.log(calc(10, 20, 50, 80)); //80
