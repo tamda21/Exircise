@@ -39,3 +39,10 @@ let res4 = nums.reduce(
   1
 );
 console.log(res4);
+///////////////////////////////////////////
+// Higher Order Functions Challenge
+let myStr= "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
+console.log(myStr[2])
+let solution = myStr.split(",").filter(item=>isNaN(item)&&item!="_");
+
+console.log(solution); // Elzero Web School
