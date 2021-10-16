@@ -147,34 +147,51 @@
 // Assignment BOM from 111 to 114
 //  EX1 : 
  //  Select 1 fontFamily
- let slect1 = document.getElementById("font");
+//  let slect1 = document.getElementById("font");
 
- slect1.onchange = function () {
-     localStorage.setItem("font", slect1.value);
-     document.body.style.fontFamily = slect1.options[localStorage.getItem("font")].textContent;
- }
- if (localStorage.getItem("font")) {
-     slect1.options[localStorage.getItem("font")].selected = true;
-     document.body.style.fontFamily = font.options[localStorage.getItem("font")].textContent;
- }
- //  Select 2 Color
- let slect2 = document.getElementById("color");
- slect2.onchange = function () {
-     localStorage.setItem("color", slect2.value);
-     document.body.style.backgroundColor = slect2.options[localStorage.getItem("color")].textContent;
- }
- if (localStorage.getItem("color")) {
-     slect2.options[localStorage.getItem("color")].selected = true;
-     document.body.style.backgroundColor = slect2.options[localStorage.getItem("color")].textContent;
- }
- // Select 3 FontSize
- let slect3 = document.getElementById("size");
- slect3.onchange = function () {
-     localStorage.setItem("size", slect3.value);
-     document.body.style.fontSize = slect3.options[localStorage.getItem("size")].textContent + "px";
- }
- if (localStorage.getItem("size")) {
-     slect3.options[localStorage.getItem("size")].selected = true;
-     document.body.style.fontSize = slect3.options[localStorage.getItem("size")].textContent + "px";
- }
+//  slect1.onchange = function () {
+//      localStorage.setItem("font", slect1.value);
+//      document.body.style.fontFamily = slect1.options[localStorage.getItem("font")].textContent;
+//  }
+//  if (localStorage.getItem("font")) {
+//      slect1.options[localStorage.getItem("font")].selected = true;
+//      document.body.style.fontFamily = font.options[localStorage.getItem("font")].textContent;
+//  }
+//  //  Select 2 Color
+//  let slect2 = document.getElementById("color");
+//  slect2.onchange = function () {
+//      localStorage.setItem("color", slect2.value);
+//      document.body.style.backgroundColor = slect2.options[localStorage.getItem("color")].textContent;
+//  }
+//  if (localStorage.getItem("color")) {
+//      slect2.options[localStorage.getItem("color")].selected = true;
+//      document.body.style.backgroundColor = slect2.options[localStorage.getItem("color")].textContent;
+//  }
+//  // Select 3 FontSize
+//  let slect3 = document.getElementById("size");
+//  slect3.onchange = function () {
+//      localStorage.setItem("size", slect3.value);
+//      document.body.style.fontSize = slect3.options[localStorage.getItem("size")].textContent + "px";
+//  }
+//  if (localStorage.getItem("size")) {
+//      slect3.options[localStorage.getItem("size")].selected = true;
+//      document.body.style.fontSize = slect3.options[localStorage.getItem("size")].textContent + "px";
+//  }
+// =======================================================
+// EX2
+let inpText = document.forms[0];
 
+function selection(elm) {
+    if (sessionStorage.getItem(elm)) {
+        inpText.children[elm].value = sessionStorage.getItem(elm)
+    }
+    inpText.children[elm].onchange = () => {
+
+        sessionStorage.setItem(elm, inpText.children[elm].value);
+    }
+
+}
+for (let i = 0; i < inpText.length; i++) {
+    selection(i);
+
+}
