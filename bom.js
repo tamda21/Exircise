@@ -179,19 +179,19 @@
 //  }
 // =======================================================
 // EX2
-let inpText = document.forms[0];
+// let inpText = document.forms[0];
 
-function selection(elm) {
-    if (sessionStorage.getItem(elm)) {
-        inpText.children[elm].value = sessionStorage.getItem(elm)
-    }
-    inpText.children[elm].onchange = () => {
+// function selection(elm) {
+//     if (sessionStorage.getItem(elm)) {
+//         inpText.children[elm].value = sessionStorage.getItem(elm)
+//     }
+//     inpText.children[elm].onchange = () => {
 
-        sessionStorage.setItem(elm, inpText.children[elm].value);
-    }
+//         sessionStorage.setItem(elm, inpText.children[elm].value);
+//     }
 
-}
-for (let i = 0; i < inpText.length; i++) {
-    selection(i);
+// }
+// for (let i = 0; i < inpText.length; i++) {
+//     selection(i);
 
-}
+// }
